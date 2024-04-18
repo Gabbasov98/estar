@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=9133eb49-3a97-4b2d-90be-6b80a97a5036"></script>
+    <title>Главная</title>
+</head>
+
+
+
+<style>
+    .wrapper a {
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+
+    .wrapper button {
+        margin-bottom: 25px;
+        width: 300px;
+        height: 45px;
+    }
+</style>
+
+<body class="m-page">
+
+    <div class="wrapper" style="padding: 50px;">
+        <a href="index.html" style="display: block; margin-bottom: 20px;">
+            Главная
+        </a>
+        <a href="index2.html" style="display: block; margin-bottom: 20px;">
+            Главная (Второй вид карусели)
+        </a>
+        <a href="catalog.html" style="display: block; margin-bottom: 20px;">
+            Каталог
+        </a>
+        <a href="catalog2.html" style="display: block; margin-bottom: 20px;">
+            Каталог (cтраница категории)
+        </a>
+        <a href="catalog-item.html" style="display: block; margin-bottom: 20px;">
+            Карточка
+        </a>
+        <a href="news.html" style="display: block; margin-bottom: 20px;">
+            Новости
+        </a>
+        <a href="news-item.html" style="display: block; margin-bottom: 20px;">
+            Cтраница новости
+        </a>
+        <a href="contacts.html" style="display: block; margin-bottom: 20px;">
+            Контакты
+        </a>
+        <a href="service.html" style="display: block; margin-bottom: 20px;">
+            Сервис и запчасти
+        </a>
+        <a href="about.html" style="display: block; margin-bottom: 20px;">
+            О компании
+        </a>
+
+
+
+
+        <button data-modal="callModal" style="border: 2px solid #000;margin-bottom: 20px;">
+            ЗАКАЗАТЬ ЗВОНОК
+        </button>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="modal" id="callModal">
+        <div class="modal__bg modal-bg _close-modal"></div>
+        <div class="modal__dialog">
+            <button class="close-btn _close-modal">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.25 27.75V6.72289L7.48441 0.25H27.75V21.6742L21.6742 27.75H0.25Z" stroke="#848383" stroke-width="0.5" />
+                    <line x1="8.53951" y1="20.2807" x2="20.0351" y2="8.78512" stroke="#848383" />
+                    <line x1="20.3051" y1="20.4273" x2="8.80953" y2="8.93168" stroke="#848383" />
+                </svg>
+            </button>
+            <div class="modal__top">
+                <div class="h2 text18-tablet bold-text">
+                    ЗАКАЗАТЬ ЗВОНОК
+                </div>
+                <div class="text16 text15-tablet medium-text">
+                    Закажите звонок и менеджер Вам перезвонит
+                </div>
+            </div>
+            <form action="" class="modal-form">
+                <div class="fg _required">
+                    <div class="fg__field">
+                        <img src="img/user.svg" alt="" class="fg__icon">
+                        <input type="text" placeholder="ФИО">
+                    </div>
+                </div>
+                <div class="fg _required">
+                    <div class="fg__field">
+                        <img src="img/phone2.svg" alt="" class="fg__icon">
+                        <input type="tel" placeholder="Телефон">
+                    </div>
+                </div>
+                <div class="fg">
+                    <div class="fg__field">
+                        <img src="img/marker.svg" alt="" class="fg__icon">
+                        <select>
+                            <option selected hidden disabled>Регион</option>
+                            <option>Регион 1</option>
+                            <option>Регион 2</option>
+                            <option>Регион 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fg">
+                    <div class="fg__field">
+                        <img src="img/car.svg" alt="" class="fg__icon">
+                        <select>
+                            <option selected hidden disabled>Интересующий вид техники</option>
+                            <option>Вид техники 1</option>
+                            <option>Вид техники 2</option>
+                            <option>Вид техники 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="m-check _full">
+                    <input type="checkbox">
+                    <label>
+                        <span>
+                        Я согласен на <a href="">обработку персональных данных</a>
+                    </span>
+                    </label>
+                </div>
+                <div class="modal-form__nav _full _flex-center">
+                    <button class="m-btn m-btn-red">
+                        <span>ОТПРАВИТЬ</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--  -->
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.min.js"></script>
+
+</body>
+
+</html>
