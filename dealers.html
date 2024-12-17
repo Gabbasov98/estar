@@ -743,16 +743,14 @@
 
                             mapPoints.forEach((el, index) => {
                                 let placeMark = new ymaps.Placemark(el.cords, {
-                                    balloonContentHeader: ``,
-                                    balloonContentBody: ``,
-                                    balloonContentFooter: '',
-                                    hintContent: '',
+                                    iconCaption: 'подсказка'
                                 }, {
-                                    iconLayout: 'default#image',
+                                    iconLayout: 'default#imageWithContent',
                                     iconImageHref: "img/marker2.svg",
                                     iconImageSize: [66, 76],
                                     iconImageOffset: [-33, -38],
                                     hideIconOnBalloonOpen: false,
+                                    // iconContent: 'asdfasdf'
                                 });
                                 myMap.geoObjects.add(placeMark);
                                 placeMarks.push(placeMark)
@@ -763,7 +761,17 @@
                                     isPlaceMArkVisible(placeMark, el)
                                 })
 
-                                placeMark.events.add('click', function() {
+                                // placeMark.events
+                                //     .add('mouseenter', function (e) {
+                                //         // Ссылку на объект, вызвавший событие,
+                                //         // можно получить из поля 'target'.
+                                //
+                                //     })
+                                //     .add('mouseleave', function (e) {
+                                //         e.get('target').options.set('iconImageHref', 'img/marker2.svg');
+                                //     });
+
+                                placeMark.events.add('click', function(e) {
                                     $(".map-view .dealer-card__title").html(el.title)
                                     $(".map-view .dealer-card__time").html(el.time)
                                     $(".map-view .dealer-card ._street .dealer-card__item-text").html(el.street)
@@ -791,8 +799,19 @@
                                         $(".map-view .dealer-card__prop._spare").removeClass("_active")
                                     }
 
+                                    placeMarks.forEach(placeMark => {
+                                        placeMark.options.set('iconImageHref', 'img/marker2.svg');
+                                    })
+                                    e.get('target').options.set('iconImageHref', 'img/marker5.svg');
                                     $(".dealer-card").addClass("_show")
                                 });
+
+                                $(".dealer-card__close").click(function() {
+                                    placeMarks.forEach(placeMark => {
+                                        placeMark.options.set('iconImageHref', 'img/marker2.svg');
+                                    })
+                                    $(".dealer-card").removeClass("_show")
+                                })
                             })
 
                             function isPlaceMArkVisible(placeMark, el) {
@@ -872,9 +891,7 @@
                                 $(`.dealer-card2[data-cord="${dataCord}"][data-cord2="${dataCord2}"]`).addClass("_show")
                             }
 
-                            $(".dealer-card__close").click(function() {
-                                $(".dealer-card").removeClass("_show")
-                            })
+
                         }
                     </script>
 
